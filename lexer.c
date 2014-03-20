@@ -20,7 +20,7 @@ void file_init(void)
 {
 	fin = fopen("input.txt","r");  
 	fout = fopen("output.txt","w");
-	
+
 	if(fin == NULL || fout == NULL) 
 	{
 	    printf("File init error\n");
@@ -56,19 +56,19 @@ void print_keyword(int n)
 {
 switch(n)
     {
-	case 1: fprintf(fout,"TK_KEYWORD                if\n");break;
-	case 2: fprintf(fout,"TK_KEYWORD                int\n");break;
-	case 3: fprintf(fout,"TK_KEYWORD                rep\n");break;
-	case 4: fprintf(fout,"TK_KEYWORD                str\n");break;
-	case 5: fprintf(fout,"TK_KEYWORD                fdef\n");break;
-	case 6: fprintf(fout,"TK_KEYWORD               false\n");break;
-	case 7: fprintf(fout,"TK_KEYWORD                bool\n");break;
-	case 8: fprintf(fout,"TK_KEYWORD                true\n");break;
-	case 9: fprintf(fout,"TK_KEYWORD                else\n");break;
-	case 10: fprintf(fout,"TK_KEYWORD               float\n");break;
-	case 11: fprintf(fout,"TK_KEYWORD                while\n");break;
-	case 12: fprintf(fout,"TK_KEYWORD                until\n");break;
-	case 13: fprintf(fout,"TK_KEYWORD                return\n");break;
+	case 1: fprintf(fout,"TK_KWIF                if\n");break;
+	case 2: fprintf(fout,"TK_KWINT                int\n");break;
+	case 3: fprintf(fout,"TK_KWREP                rep\n");break;
+	case 4: fprintf(fout,"TK_KWSTR                str\n");break;
+	case 5: fprintf(fout,"TK_KWFDEF                fdef\n");break;
+	case 6: fprintf(fout,"TK_KWFLS               false\n");break;
+	case 7: fprintf(fout,"TK_KWBOL                bool\n");break;
+	case 8: fprintf(fout,"TK_KWTRU                true\n");break;
+	case 9: fprintf(fout,"TK_KWELS                else\n");break;
+	case 10: fprintf(fout,"TK_KWLFT               float\n");break;
+	case 11: fprintf(fout,"TK_KWWHL                while\n");break;
+	case 12: fprintf(fout,"TK_KWUNT                until\n");break;
+	case 13: fprintf(fout,"TK_KWRET                return\n");break;
     }
 	flag3 = 1;
 }
@@ -165,17 +165,17 @@ int get_state(char* ch,int state)
 			case ')': {print_token(4);next_state = 0;start = current;break;}
 
 			case ',': {print_token(5);next_state = 0;start = current;break;}
-			 
+
 			case ';': {print_token(6);next_state = 0;start = current;break;}
-			
+
 			case '+': {print_token(7);next_state = 0;start = current;break;}
-		
+
 			case '-': {print_token(8);next_state = 0;start = current;break;}
 
 			case '*': {print_token(9);next_state = 0;start = current;break;}
 
 			case '/': {print_token(10);next_state = 0;start = current;break;}
-			
+
 			case '[': {print_token(11);next_state = 0;start = current;break;}
 
 			case ']': {print_token(12);next_state = 0;start = current;break;}
@@ -183,11 +183,11 @@ int get_state(char* ch,int state)
 			case ':': {print_token(13);next_state = 0;start = current;break;}
 
 			case '$': {print_token(14);next_state = 0;start = current;break;}
-		
+
 			case 'f': {next_state = 1;break;}
 
 			case 'i': {next_state = 2;break;}
-	
+
 			case 'r': {next_state = 3;break;}
 
 			case 'e': {next_state = 4;break;}
@@ -201,7 +201,7 @@ int get_state(char* ch,int state)
 			case 'u': {next_state = 8;break;}
 
 			case 't': {next_state = 9;break;}
-		
+
 			case '=': {next_state = 51;break;}
 
 			case '!': {next_state = 52;break;}
@@ -209,10 +209,10 @@ int get_state(char* ch,int state)
 			case '>': {next_state = 53;break;}
 
 			case '<': {next_state = 54;break;}
-		
+
 			case '"': {next_state = 55;break;}			
-			
-			
+
+
 			default: if(alpha(ch)){next_state = 10;}
 				  else if(isnum(ch))
 				   {
@@ -230,7 +230,7 @@ int get_state(char* ch,int state)
 					retract();
 					break;
 				     }
-	
+
 		}
 		break;
 	     }
@@ -240,16 +240,16 @@ int get_state(char* ch,int state)
 		switch(*ch)
 		{
 			case 'd': {next_state = 11;break;}
-			
+
 			case 'a': {next_state = 12;break;}
 
 			case 'l': {next_state = 13;break;}
-	
+
 			default: {if(checkid(ch)){next_state = 15;retract();break;} else{next_state = 10;break;}}
 		}
 		break;
 	   }
-	
+
 	   case 2:
 	   {
 		if(*ch == 'n')
@@ -273,7 +273,7 @@ int get_state(char* ch,int state)
 	   {
 		if(*ch == 'e')
 		{
-			
+
 			next_state = 17;
 			break;
 		}
@@ -283,7 +283,7 @@ int get_state(char* ch,int state)
 		}
 		break;
 	   }
-		
+
 	  case 4:
 	  {
 		if(*ch == 'l')
@@ -385,7 +385,7 @@ int get_state(char* ch,int state)
 			break;
 		}
 		break;
-		
+
 	}
 
 	case 11:
@@ -421,7 +421,7 @@ int get_state(char* ch,int state)
 		else if(checkid(ch)){next_state = 15;retract();break;} 
 		else {next_state = 10;break;}
 	}
-	
+
 	case 14:
 	{
 		if(*ch == 't')
@@ -440,7 +440,7 @@ int get_state(char* ch,int state)
 		next_state = 0;
 		break;
 	}
-	
+
 	case 16:
 	{
 		if(checkid(ch))
@@ -456,7 +456,7 @@ int get_state(char* ch,int state)
 		      break;
 		}
 	}
-	
+
 	case 17:
 	{
 		if(*ch == 'p')
@@ -644,7 +644,7 @@ int get_state(char* ch,int state)
 			if(checkid(ch)){next_state = 15;retract();break;} else {next_state = 10;break;}
 		}
 	   }
-	   
+
 	 case 31:
 	 {
 		if(*ch == 'l')
@@ -673,7 +673,7 @@ int get_state(char* ch,int state)
 		      break;
 		}
 	 }
-	
+
 	 case 33:
 	 {
 		if(*ch == 'l')
@@ -699,8 +699,8 @@ int get_state(char* ch,int state)
 			if(checkid(ch)){next_state = 15;retract();break;} else {next_state = 10;break;}
 		}
 	}
-	
-	
+
+
 	case 35:
 	{
 		if(*ch == 'e')
@@ -940,7 +940,7 @@ int get_state(char* ch,int state)
 			break;
 		}
 	}
-	
+
 	case 52:
 	{
 		if(*ch == '=')
@@ -1028,7 +1028,7 @@ int get_state(char* ch,int state)
 			break;
 		}
 	}
-	
+
 	case 57:
 	{
 		if(!isnum(ch))
@@ -1043,7 +1043,7 @@ int get_state(char* ch,int state)
 				next_state = 57;
 				break;
 			}
-	
+
 	}
 
 	case 58:	
@@ -1054,7 +1054,7 @@ int get_state(char* ch,int state)
 		break;
 	}
     }
-	
+
 }
 	//printf("nextState = %d\n",next_state);
 	return next_state;
@@ -1087,5 +1087,3 @@ int main(void)
 	fcloseall();
 	return 0;
 }
-
-
