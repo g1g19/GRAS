@@ -1,0 +1,109 @@
+/*
+Team Members
+GOPICHAND PATURI         2011A7PS067H
+SURI SRINIVAS PRAKASH    2011A7PS199H
+ANIKET GARG		 2011A7PS170H
+RANJITH NORI		 2011A7PS216H
+**/
+
+
+
+
+fdef fun1: void,void returns void
+{
+
+	int a;
+	int b;
+	a = 10;
+	while(b<a){
+		if(b&&2==1)
+			b=b-1;
+		else if (b ^ 2 == 3)
+			b = b+2;
+		else if ( b >= 6)
+			a = b - 3;
+		else
+			b = b + 1;	
+	}
+}
+
+
+
+TYPE                     LEXEME
+-------------------------------
+TK_KWFDEF      4          fdef
+TK_ID             14        fun1
+TK_COL        27            :
+TK_ID             14        void
+TK_COM         20           ,
+TK_ID             14        void
+TK_ID             14        returns
+TK_ID             14        void
+TK_LP          16          {
+TK_KWINT       1         int
+TK_ID             14        a
+TK_SEMICOL     21               ;
+TK_KWINT       1         int
+TK_ID             14        b
+TK_SEMICOL     21               ;
+TK_ID             14        a
+TK_EQ         29           =
+TK_INT           13         10
+TK_SEMICOL     21               ;
+TK_KWWHL      10          while
+TK_LB          18          (
+TK_ID             14        b
+TK_LT         32            <
+TK_ID             14        a
+TK_RB          19          )
+TK_LP          16          {
+TK_KWIF        0        if
+TK_LB          18          (
+TK_INT           13         b&&2
+TK_EQEQ	     36	    ==
+TK_INT           13         1
+TK_RB          19          )
+TK_ID             14        b
+TK_EQ         29           =
+TK_ID             14        b
+TK_MINUS       23             -
+TK_INT           13         1
+TK_SEMICOL     21               ;
+TK_KWFLS       5        false
+TK_KWIF        0        if
+TK_LB          18          (
+TK_ID             14        b
+TK_ERR         -1           ^
+TK_INT           13         2
+TK_EQEQ	     36	    ==
+TK_INT           13         3
+TK_RB          19          )
+TK_ID             14        b
+TK_EQ         29           =
+TK_ID             14        b
+TK_PLUS        22            +
+TK_INT           13         2
+TK_SEMICOL     21               ;
+TK_KWFLS       5        false
+TK_KWIF        0        if
+TK_LB          18          (
+TK_ID             14        b
+TK_GET        33           >=
+TK_INT           13         6
+TK_RB          19          )
+TK_ID             14        a
+TK_EQ         29           =
+TK_ID             14        b
+TK_MINUS       23             -
+TK_INT           13         3
+TK_SEMICOL     21               ;
+TK_KWFLS       5        false
+TK_ID             14        b
+TK_EQ         29           =
+TK_ID             14        b
+TK_PLUS        22            +
+TK_INT           13         1
+TK_SEMICOL     21               ;
+TK_RP          17          }
+TK_RP          17          }
+TK_EOF

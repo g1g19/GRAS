@@ -1,3 +1,15 @@
+/**
+*LEXER IMLEMENTATION
+*/
+/*
+Team Members
+GOPICHAND PATURI         2011A7PS067H
+SURI SRINIVAS PRAKASH    2011A7PS199H
+ANIKET GARG		 2011A7PS170H
+RANJITH NORI		 2011A7PS216H
+**/
+
+
 #include<stdio.h>
 #include<string.h>
 #include<stddef.h>
@@ -16,6 +28,7 @@ char* ch;
 char* start = NULL;
 char* current = NULL;
 
+//ENUM VALUES USED IN PARSER PHASE
 enum
 {
     TK_KWIF,TK_KWINT,TK_KWREP,TK_KWSTR,TK_KWFDEF,TK_KWFLS,TK_KWBOL,TK_KWTRU,TK_KWELS,TK_KWLFT,TK_KWWHL,TK_KWUNT,TK_KWRET,TK_INT,
@@ -23,6 +36,7 @@ enum
     TK_GT,TK_LT,TK_GET,TK_LET,TK_NEQ,TK_EQEQ
 }token;
 
+//FILE INITIALIZE
 void file_init(void)
 {
 	fin = fopen("input.txt","r");  
@@ -34,11 +48,12 @@ void file_init(void)
 	}
 }
 
-
+//BACKTRACKING
 void retract(void)
 {
    current--;
 }
+
 
 int checkid(char* ch)
 {
@@ -49,6 +64,7 @@ int checkid(char* ch)
 	  return 0;
 }
 
+//CHECK FOR CHARACTER ALPHABET
 int alpha(char* ch)
 {
 	if((*ch>=97 && *ch<=122) ||(*ch >=65 && *ch<=90) )
@@ -59,6 +75,8 @@ int alpha(char* ch)
 	    return 0;
 }
 
+
+//KEYWORDS LIST
 void print_keyword(int n)
 {
 switch(n)
@@ -153,7 +171,7 @@ void print_token(int n)
 }
 
 
-
+//DFA STATES FORMED TO TOKENIZE INPUT DATA
 int get_state(char* ch,int state)
 {
        int next_state = 0;

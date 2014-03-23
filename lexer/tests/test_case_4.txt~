@@ -1,0 +1,26 @@
+/*
+Team Members
+GOPICHAND PATURI         2011A7PS067H
+SURI SRINIVAS PRAKASH    2011A7PS199H
+ANIKET GARG		 2011A7PS170H
+RANJITH NORI		 2011A7PS216H
+**/
+
+
+
+int i, j, k,l;
+float a, b;
+b = 0.5657;
+j=100;
+k=0;
+rep(i, 0, -1) {
+	a = j + k * b;
+	rep(j,100,2) {
+		b = a*b;
+		rep(k,200,4)
+			b = b + b ;
+			rep(l,1,1)
+				a = a/b;
+	}
+}
+

@@ -1,0 +1,85 @@
+/*
+Team Members
+GOPICHAND PATURI         2011A7PS067H
+SURI SRINIVAS PRAKASH    2011A7PS199H
+ANIKET GARG		 2011A7PS170H
+RANJITH NORI		 2011A7PS216H
+**/
+
+
+
+int i, j, k;
+float a, b;
+b = 0.5657;
+j=100;
+k=0;
+rep(j, 0, -1) {
+	a = j + k * b;
+	rep(k,100,2) {
+		b = a*b;
+	}
+}
+
+
+TYPE                     LEXEME
+-------------------------------
+TK_KWINT                int
+TK_ID                     i
+TK_COM                     ,
+TK_ID                     j
+TK_COM                     ,
+TK_ID                     k
+TK_SEMICOL                     ;
+TK_KWLFT               float
+TK_ID                     a
+TK_COM                     ,
+TK_ID                     b
+TK_SEMICOL                     ;
+TK_ID                     b
+TK_EQ                     =
+TK_FLOAT                  0.5657
+TK_SEMICOL                     ;
+TK_ID                     j
+TK_EQ                     =
+TK_INT                    100
+TK_SEMICOL                     ;
+TK_ID                     k
+TK_EQ                     =
+TK_INT                    0
+TK_SEMICOL                     ;
+TK_KWREP                rep
+TK_LB                     (
+TK_ID                     j
+TK_COM                     ,
+TK_INT                    0
+TK_COM                     ,
+TK_MINUS                     -
+TK_INT                    1
+TK_RB                     )
+TK_LP                     {
+TK_ID                     a
+TK_EQ                     =
+TK_ID                     j
+TK_PLUS                     +
+TK_ID                     k
+TK_MUL                     *
+TK_ID                     b
+TK_SEMICOL                     ;
+TK_KWREP                rep
+TK_LB                     (
+TK_ID                     k
+TK_COM                     ,
+TK_INT                    100
+TK_COM                     ,
+TK_INT                    2
+TK_RB                     )
+TK_LP                     {
+TK_ID                     b
+TK_EQ                     =
+TK_ID                     a
+TK_MUL                     *
+TK_ID                     b
+TK_SEMICOL                     ;
+TK_RP                     }
+TK_RP                     }
+TK_EOF

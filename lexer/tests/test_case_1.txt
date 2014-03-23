@@ -1,0 +1,99 @@
+/*
+Team Members
+GOPICHAND PATURI         2011A7PS067H
+SURI SRINIVAS PRAKASH    2011A7PS199H
+ANIKET GARG		 2011A7PS170H
+RANJITH NORI		 2011A7PS216H
+**/
+
+
+fdef main: void, void
+{
+	int a, b, i;
+	float c;
+	char d, e;
+	a = 55;
+	c = 77.3335;
+	b = a + 67;
+	d = 'z';
+	rep(i, b, 2)
+	{
+		a = a + b;
+		b = b*3;
+		c = b/3;
+	}
+}
+
+
+
+TYPE                     LEXEME
+-------------------------------
+TK_KWFDEF                fdef
+TK_ID                     main
+TK_COL                     :
+TK_ID                     void
+TK_COM                     ,
+TK_ID                     void
+TK_LP                     {
+TK_KWINT                int
+TK_ID                     a
+TK_COM                     ,
+TK_ID                     b
+TK_COM                     ,
+TK_ID                     i
+TK_SEMICOL                     ;
+TK_KWLFT               float
+TK_ID                     c
+TK_SEMICOL                     ;
+TK_ID                     char
+TK_ID                     d
+TK_COM                     ,
+TK_ID                     e
+TK_SEMICOL                     ;
+TK_ID                     a
+TK_EQ                     =
+TK_INT                    55
+TK_SEMICOL                     ;
+TK_ID                     c
+TK_EQ                     =
+TK_FLOAT                  77.3335
+TK_SEMICOL                     ;
+TK_ID                     b
+TK_EQ                     =
+TK_ID                     a
+TK_PLUS                     +
+TK_INT                    67
+TK_SEMICOL                     ;
+TK_ID                     d
+TK_EQ                     =
+TK_ERR                    'z';
+TK_KWREP                rep
+TK_LB                     (
+TK_ID                     i
+TK_COM                     ,
+TK_ID                     b
+TK_COM                     ,
+TK_INT                    2
+TK_RB                     )
+TK_LP                     {
+TK_ID                     a
+TK_EQ                     =
+TK_ID                     a
+TK_PLUS                     +
+TK_ID                     b
+TK_SEMICOL                     ;
+TK_ID                     b
+TK_EQ                     =
+TK_ID                     b
+TK_MUL                     *
+TK_INT                    3
+TK_SEMICOL                     ;
+TK_ID                     c
+TK_EQ                     =
+TK_ID                     b
+TK_LSB                     [
+TK_INT                    3
+TK_SEMICOL                     ;
+TK_RP                     }
+TK_RP                     }
+TK_EOF

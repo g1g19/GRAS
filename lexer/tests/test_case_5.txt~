@@ -1,0 +1,106 @@
+fdef fun1: int a,int b returns char c
+{
+
+a = 10;
+b=5;
+c = a*b*b;
+
+return c;
+
+}
+
+fdef fun2: char a,int b returns char c
+{
+
+a = 'a';
+b=5;
+c = a;
+
+return c;
+
+}
+
+fdef fun3: int a returns void
+{
+
+a = 1000;
+
+}
+
+
+
+TYPE                     LEXEME
+-------------------------------
+TK_KWFDEF      4          fdef
+TK_ID             14        fun1
+TK_COL        27            :
+TK_KWINT       1         int
+TK_ID             14        a
+TK_COM         20           ,
+TK_KWINT       1         int
+TK_ID             14        b
+TK_ID             14        returns
+TK_ID             14        char
+TK_ID             14        c
+TK_LP          16          {
+TK_ID             14        a
+TK_EQ         29           =
+TK_INT           13         10
+TK_SEMICOL     21               ;
+TK_ID             14        b
+TK_EQ         29           =
+TK_INT           13         5
+TK_SEMICOL     21               ;
+TK_ID             14        c
+TK_EQ         29           =
+TK_ID             14        a
+TK_MUL         24           *
+TK_ID             14        b
+TK_MUL         24           *
+TK_ID             14        b
+TK_SEMICOL     21               ;
+TK_KWRET      12         return
+TK_ID             14        c
+TK_SEMICOL     21               ;
+TK_RP          17          }
+TK_KWFDEF      4          fdef
+TK_ID             14        fun2
+TK_COL        27            :
+TK_ID             14        char
+TK_ID             14        a
+TK_COM         20           ,
+TK_KWINT       1         int
+TK_ID             14        b
+TK_ID             14        returns
+TK_ID             14        char
+TK_ID             14        c
+TK_LP          16          {
+TK_ID             14        a
+TK_EQ         29           =
+TK_ERR         -1           'a';
+TK_ID             14        b
+TK_EQ         29           =
+TK_INT           13         5
+TK_SEMICOL     21               ;
+TK_ID             14        c
+TK_EQ         29           =
+TK_ID             14        a
+TK_SEMICOL     21               ;
+TK_KWRET      12         return
+TK_ID             14        c
+TK_SEMICOL     21               ;
+TK_RP          17          }
+TK_KWFDEF      4          fdef
+TK_ID             14        fun3
+TK_COL        27            :
+TK_KWINT       1         int
+TK_ID             14        a
+TK_ID             14        returns
+TK_ID             14        void
+TK_LP          16          {
+TK_ID             14        a
+TK_EQ         29           =
+TK_INT           13         1000
+TK_SEMICOL     21               ;
+TK_RP          17          }
+TK_EOF

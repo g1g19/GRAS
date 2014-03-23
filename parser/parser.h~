@@ -1,0 +1,12 @@
+//HEADER FILE FOR PARSER
+#include"parser.c"
+
+void push(int toknum);
+void pop();
+void fill_tree_stack();
+int rule_get(int nt,int t);
+void print_token(int n);
+void printParseTree();
+void initializeParser();
+void stack_push_rule(int rule);
+void ParseTreeParse(FILE* fp);
