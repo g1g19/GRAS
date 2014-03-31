@@ -269,27 +269,13 @@ void ParseTreeParse(FILE* fp)
 	while(fscanf(fp,"%s %d",token,&cur) != EOF)
 	{	
 		while (stack[top1] >= 100)
-	{	//sleep(1);
+	{
 		ruleno = rule_get(stack[top1],cur);
-		//print_token(stack[top1]);
-		//print_token(cur);
-					
-		//printf("ruleno = %d; cur : %d ; top: %d\n",ruleno,cur,stack[top1]);
 		stack_push_rule(ruleno); 
 	}
-	//printf("OUT OF LOOP\n");
-	//print_token(stack[top1]);
-	//print_token(cur);
-	//printf("Matching top : ");
-	//print_token(stack[top1]),
-	//printf(" with ");
-	//print_token(cur);
-	//printf("\n");
+	
 	if (stack[top1]==TK_$) 
 	{
-		 //printf("Dollar found on top ; current input : ");
-	//	 print_token(stack[top1]);
-		 //printf("\n"); 
 		break;
 	}
 	pop(); 
@@ -302,15 +288,11 @@ void ParseTreeParse(FILE* fp)
 int main(void)
 {
 	FILE* fp = fopen("output.txt","r");
-	//printf("test2\n");	
 	initializeParser(); 
-	//printf("test1\n");
 	fill_tree_stack();
-	//printf("test3\n");
 	fin = fopen("output.txt","r");
 	fout = fopen("finaloutput.txt","w");
 	ParseTreeParse(fp);
-	//printf("test9\n");
 	printParseTree(fp); //preorder
 }
 
